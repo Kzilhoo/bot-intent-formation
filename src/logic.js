@@ -1,8 +1,8 @@
-import { allocations } from './formation'
+import { formation } from './formation'
 
 export const logic = ($message) => {
     return new Promise((resolve, reject) => {
-        const response = allocations[Math.floor(Math.random() * allocations.length)];
+        const response = formation[Math.floor(Math.random() * formation.length)];
     const newMessage = Object.assign($message.message, { content: response })
     const newIntentMessage = Object.assign($message, { message: newMessage })
     resolve(newIntentMessage)
